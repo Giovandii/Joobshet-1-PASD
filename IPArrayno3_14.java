@@ -4,6 +4,7 @@ public class IPArrayno3_14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        //Array mata kuliah
         String MK[] = { 
             "Pancasila", 
             "Konsep Teknologi Informasi", 
@@ -15,20 +16,20 @@ public class IPArrayno3_14 {
             "Keselamatan dan Kesehatan Kerja" 
         };
 
-        int sks[] = {2, 2, 2, 2, 2, 3, 2, 2};
-        double nilai[] = new double[MK.length];
-        String nilaiHuruf[] = new String[MK.length];
-        double nilaiSetara[] = new double[MK.length]; 
+        int sks[] = {2, 2, 2, 2, 2, 3, 2, 2};           //sks setiap mata kuliah
+        double nilai[] = new double[MK.length];         //instansiasi array nilai angka
+        String nilaiHuruf[] = new String[MK.length];    //instansiasi array nilai huruf
+        double nilaiSetara[] = new double[MK.length];   //instansiasi array nilai setara
 
         System.out.println("==============================");
         System.out.println("Program Menghitung IP Semester");
         System.out.println("==============================");
 
         // Input nilai dengan validasi
-        for (int i = 0; i < MK.length; i++) {
+        for (int i = 0; i < MK.length; i++) {       //perulangan sebanyak mata kuliah pada array
             do {
                 System.out.print("Masukkan nilai angka untuk MK " + MK[i] + " : ");
-                nilai[i] = sc.nextDouble();
+                nilai[i] = sc.nextDouble();                                             //memasukan nilai setiap matkul dalam rentan 1-100
                 if (nilai[i] < 1 || nilai[i] > 100) {
                     System.out.println("Nilai harus antara 1 dan 100. Silakan coba lagi.");
                 }
@@ -70,7 +71,7 @@ public class IPArrayno3_14 {
             totalBobotSKS += nilaiSetara[i] * sks[i];
             totalSKS += sks[i];
         }
-        double ip = totalBobotSKS / totalSKS;
+        double ip = totalBobotSKS / totalSKS;   //IP semester
 
         System.out.println("==============================");
         System.out.printf("IP Semester = %.2f\n", ip);

@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Tugasno1ArrayKota14 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);    //menggunakan scanner untuk menginput data
 
         // Array plat sebagai char
         char plat[] = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'L', 'N', 'T'};
-        // Array kota sebagai char[] (hasil toCharArray)
-        char kota[][] = new char[10][];
+        // Array kota sebagai char[] 
+        char kota[][] = new char[10][12];       //memasukan nama daeraah kedalam array kota di setiap baris
         kota[0] = "BANTEN".toCharArray();
         kota[1] = "JAKARTA".toCharArray();
         kota[2] = "BANDUNG".toCharArray();
@@ -20,10 +20,10 @@ public class Tugasno1ArrayKota14 {
         kota[9] = "TEGAL".toCharArray();
 
         System.out.print("Masukan Kode Plat Daerah: ");
-        char kodeplat = sc.next().charAt(0);
+        char kodeplat = sc.next().charAt(0);            //meng input code plat dalam bentuk char
 
-        boolean ditemukan = false;
-        for (int i = 0; i < plat.length; i++) {
+        boolean ditemukan = false;                  
+        for (int i = 0; i < plat.length; i++) {     //prulangan untuk memeriksa apakah kode tersebut ada di dalam array
             if (kodeplat == plat[i]) {
                 System.out.println("Kode " + plat[i] + " berasal dari kota " + String.valueOf(kota[i]));
                 ditemukan = true;
@@ -31,7 +31,7 @@ public class Tugasno1ArrayKota14 {
             }
         }
 
-        if (!ditemukan) {
+        if (!ditemukan) {           //jiks kode tidak ditemukan maka printt
             System.out.println("Kode tidak ditemukan");
         }
 
